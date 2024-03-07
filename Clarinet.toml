@@ -30,6 +30,11 @@ path = 'contracts/royalties.clar'
 clarity_version = 2
 epoch = 2.4
 
+[contracts.stacksmarket]
+path = 'contracts/stacksmarket.clar'
+clarity_version = 2
+epoch = 2.4
+
 [contracts.stx20]
 path = 'contracts/stx20.clar'
 clarity_version = 2
