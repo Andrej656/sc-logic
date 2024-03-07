@@ -1,6 +1,7 @@
 
 
-(impl-trait .tradeables-trait.tradeables-trait)
+
+
 
 ;; Tradables where all instances are owned by the Blockcity contract.
 ;; Transfers will never change ownership to ensure the contract retains control over the tradables.

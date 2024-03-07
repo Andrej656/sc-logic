@@ -1,4 +1,5 @@
-(define-trait tradeables-trait)
+(use-trait tradables-trait tradables-trait)
+
 
 ;; Market Listings Map
 (define-map on-sale
@@ -27,19 +28,21 @@
 (define-constant err-tradable-not-found u6)
 
 ;; Private Functions for Asset Management
-(define-private (get-owner (tradables <tradeables-trait>) (tradable-id uint))
+(define-private (get-owner (tradables <tradables-trait>) (tradable-id uint))
   (contract-call? tradables get-owner tradable-id)
 )
 
 ;; Adjusted for Asset Type Handling
-(define-private (transfer-tradable-to-escrow (tradables <tradeables-trait>) (tradable-id uint) (asset-type (string-ascii 10)))
+(define-private (transfer-tradable-to-escrow (tradables <tradables-trait>) (tradable-id uint) (asset-type (string-ascii 10)))
   (begin
     (map-insert accepting-owners {tradables: (contract-of tradables), tradable-id: tradable-id} {owner: tx-sender, asset-type: asset-type})
     (contract-call? tradables transfer tradable-id tx-sender (as-contract tx-sender))
   )
 )
 
-(define-private (transfer-tradable-from-escrow (tradables <tradeables-trait>) (tradable-id uint) (asset-type (string-ascii 10)))
+
+
+(define-private (transfer-tradable-from-escrow (tradables <tradables-trait>) (tradable-id uint) (asset-type (string-ascii 10)))
   (let ((owner tx-sender))
     (begin
       (map-delete accepting-owners {tradables: (contract-of tradables), tradable-id: tradable-id})

@@ -11,17 +11,37 @@ clarity_version = 2
 epoch = 2.4
 
 [contracts.constant-tradeables]
-path = 'contracts/constant-tradeables.clar'
+path = 'contracts/constant-tradables.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.liquiditypool]
+path = 'contracts/liquiditypool.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.rewardscontract]
+path = 'contracts/rewardscontract.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.royalties]
+path = 'contracts/royalties.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.stx20]
+path = 'contracts/stx20.clar'
 clarity_version = 2
 epoch = 2.4
 
 [contracts.tradeables-trait]
-path = 'contracts/tradeables-trait.clar'
+path = 'contracts/tradables-trait.clar'
 clarity_version = 2
 epoch = 2.4
 
 [contracts.tradeables-trait-ext]
-path = 'contracts/tradeables-trait-ext.clar'
+path = 'contracts/tradables-trait-ext.clar'
 clarity_version = 2
 epoch = 2.4
 
